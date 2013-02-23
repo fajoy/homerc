@@ -1,0 +1,24 @@
+vbell off
+vbell_msg "Ding Ding!!"
+bell off
+bell_msg "Bell in window %n^G"
+startup_message off
+
+caption always "%{wK} %=|%{Wb}%-w%{Yr}%n*%t%{Wb}%+w%{wK}|%= "
+hardstatus alwayslastline "%= %= %{Y}(%H) %{R}%e %{R} %l %{wb} %Y/%m/%d %c"
+termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+termcapinfo xterm-color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+
+bindkey "5C" next
+bindkey "5D" prev
+bindkey "^[[C" next
+bindkey "^[[D" prev
+
+bind U encoding utf8 utf8
+bind u encoding big5 utf8
+
+bind B encoding big5 big5
+bind b encoding utf8 big5
+
+bind . eval  "echo \"source $HOME/.screenrc\"" "source $HOME/.screenrc" 
+bind h help
