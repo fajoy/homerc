@@ -11,7 +11,6 @@
 export TERM=xterm-256color
 export PS1='\[\033[1;36m\]\t ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u\[\033[m\]@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PATH=${PATH}:${HOME}/bin
-
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -45,3 +44,18 @@ fi
 
 export INPUTRC=~/.inputrc
 cd ~/
+set meta-flag on
+set input-meta on
+set convert-meta off
+set output-meta on
+bind '"\e[1~": beginning-of-line'
+bind '"\e[4~": end-of-line'
+bind '"\e[5~": beginning-of-history'
+bind '"\e[6~": end-of-history'
+bind '"\e[3~": delete-char'
+bind '"\e[2~": quoted-insert'
+bind '"\e[": backward-word'
+bind '"^w": backward-delete-word'
+bind '"\x1b\x5b\x41": history-search-backward'
+bind '"\x1b\x5b\x42": history-search-forward'
+
