@@ -11,6 +11,7 @@
 export TERM=xterm-256color
 export PS1='\[\033[1;36m\]\t ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u\[\033[m\]@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PATH=${PATH}:${HOME}/bin
+export EDITOR=/usr/bin/vim
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -26,21 +27,19 @@ alias hn="history -n ~/.histfile/last"
 alias hc="history -c"
 
 if [[  `uname` =~ "Linux" ]] ; then
-alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+   alias ls='ls --color=auto'
+   alias ll='ls -alF'
+   alias la='ls -A'
+   alias l='ls -CF'
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
+   alias grep='grep --color=auto'
+   alias fgrep='fgrep --color=auto'
+   alias egrep='egrep --color=auto'
 fi
 
 if [ -f ~/.bash_aliases ]; then
    . ~/.bash_aliases
 fi
-
 
 export INPUTRC=~/.inputrc
 cd ~/
@@ -59,3 +58,8 @@ bind '"^w": backward-delete-word'
 bind '"\x1b\x5b\x41": history-search-backward'
 bind '"\x1b\x5b\x42": history-search-forward'
 
+set filec
+set autolist                # tab completing
+set autologout=0
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
