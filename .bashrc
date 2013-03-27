@@ -47,19 +47,10 @@ set meta-flag on
 set input-meta on
 set convert-meta off
 set output-meta on
-bind '"\e[1~": beginning-of-line'
-bind '"\e[4~": end-of-line'
-bind '"\e[5~": beginning-of-history'
-bind '"\e[6~": end-of-history'
-bind '"\e[3~": delete-char'
-bind '"\e[2~": quoted-insert'
-bind '"\e[": backward-word'
-bind '"^w": backward-delete-word'
-bind '"\x1b\x5b\x41": history-search-backward'
-bind '"\x1b\x5b\x42": history-search-forward'
 
 set filec
 set autolist                # tab completing
 set autologout=0
 
+[[ -s "$HOME/.bash_profile" ]] && . "$HOME/.bash_profile" # Load bash_profile
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
