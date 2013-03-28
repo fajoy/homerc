@@ -16,7 +16,7 @@ change_file(){
     fi
     cp ${pwd}/${rc} ${hrc}
 }
-for rc in .*rc ;
+for rc in .*rc .*profile ;
 do
 change_file ${rc}
 done
