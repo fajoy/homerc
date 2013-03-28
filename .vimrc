@@ -1,18 +1,3 @@
-nnoremap <leader>a<TAB> :setl ai cin si <CR>
-nnoremap <leader>n<TAB> :setl noai nocin nosi inde=<CR>
-map <S-H> gT
-" go to next tab
-map <S-L> gt
-
-" new tab
-map <C-t><C-t> :tabnew<CR>
-" close tab
-map <C-t><C-w> :tabclose<CR>
-
-
-set nobackup
-set nonumber
-set background=dark
 hi clear
 hi Normal       guifg=ivory guibg=Black
 hi TabLineFill  guifg=#272d2f guibg=#272d2f gui=None
@@ -63,6 +48,49 @@ set cursorline
 "hi CursorLine term=underline cterm=underline guibg=#555555
 highlight CursorLine cterm=NONE ctermbg=23
 
+set nobackup
+set nonumber
+set background=dark
+syntax on   			" syntax highlighting
+
+set expandtab           " enter spaces when tab is pressed
+set textwidth=0       " break lines when line length increases
+set tabstop=4           " use 4 spaces to represent tab
+set softtabstop=4
+set shiftwidth=4        " number of spaces to use for auto indent
+set autoindent          " copy indent from current line when starting a new line
+set backspace=indent,eol,start
+set ruler               " show line and column number
+set showcmd 			" show (partial) command in status lineime.sleep(1)
+
+au BufRead,BufNewFile *.py set expandtab
+au BufRead,BufNewFile *.c set noexpandtab
+au BufRead,BufNewFile *.h set noexpandtab
+au BufRead,BufNewFile Makefile* set noexpandtab
+
+
+
+"ref http://www.rcramer.com/tech/linux/vim_indent.html
+":verbose set ai? cin? cink? cino? si? inde? indk?
+set ai
+set cin
+set si 
+set inde=
+nnoremap <leader><TAB> :set ai! cin! si! <CR>
+
+" new tab
+map <C-t><C-t> :tabnew<CR>
+" close tab
+map <C-t><C-w> :tabclose<CR>
+
+
+" change tab
+map <S-H> gT
+map <S-L> gt
+
+" Toggle line numbers and fold column for easy copying:
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+
 
 "enable keypad by PuTTY
 inoremap <Esc>Oq 1
@@ -87,14 +115,15 @@ imap <PageUp> <C-o><C-u>
 imap <PageDown> <C-o><C-d>
 
 
+
+
+
+
 function! WinResize()
     let a:cmd=input(':','vertical resize +1')
     execute a:cmd
 endfunction
-
 nnoremap <C-W>> :call WinResize()<CR>
-
-
 
 function! SetArgs()
     let w:args=input('run args:',getwinvar(winnr(),"args"))
@@ -134,21 +163,3 @@ nnoremap <F9> :call Run()<CR>
 nnoremap <LEADER><F10> :call SetArgs()<CR>
 
 
-
-au BufRead,BufNewFile *.py set expandtab
-au BufRead,BufNewFile *.c set noexpandtab
-au BufRead,BufNewFile *.h set noexpandtab
-au BufRead,BufNewFile Makefile* set noexpandtab
-
-set expandtab           " enter spaces when tab is pressed
-set textwidth=120       " break lines when line length increases
-set tabstop=4           " use 4 spaces to represent tab
-set softtabstop=4
-set shiftwidth=4        " number of spaces to use for auto indent
-set autoindent          " copy indent from current line when starting a new line
-
-set backspace=indent,eol,start
-
-set ruler                           " show line and column number
-syntax on   			" syntax highlighting
-set showcmd 			" show (partial) command in status lineime.sleep(1)
