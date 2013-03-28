@@ -22,9 +22,9 @@ bindkey "^[x" next
 bindkey "^[z" prev
 bind "X" remove
 bind "Q" only
-bind "^[\" split -v
-bind "^[-" split
-bind "^[c" screen
+bind "|" split -v
+bind "-" split
+bind "c" screen
 bind "l" redisplay
 bind "." eval "echo \"source $HOME/.screenrc\"" "source $HOME/.screenrc" 
 bind "h" help
