@@ -1,11 +1,26 @@
-"\e[1~": beginning-of-line
-"\e[4~": end-of-line
-"\e[5~": beginning-of-history
-"\e[6~": end-of-history
-"\e[3~": delete-char
-"\e[2~": quoted-insert
-"\e[": backward-word
+#get keycode by command: "showkey -a"
 
+#home
+"\e[1~": beginning-of-line
+#end
+"\e[4~": end-of-line
+#page up
+"\e[5~": beginning-of-history
+#page down
+"\e[6~": end-of-history
+#delete
+"\e[3~": delete-char
+#insert
+"\e[2~": quoted-insert
+
+#ctrl + w
 "^w": backward-delete-word
-"\x1b\x5b\x41": history-search-backward
-"\x1b\x5b\x42": history-search-forward
+#up
+"\e[A": history-search-backward
+#down
+"\e[B": history-search-forward
+#alt + left
+"\e\e[C":forward-word
+#alt + right
+"\e\e[D":backward-word
+"\eOP":""
