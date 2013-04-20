@@ -72,9 +72,9 @@ au BufRead,BufNewFile Makefile* set noexpandtab
 
 "ref http://www.rcramer.com/tech/linux/vim_indent.html
 ":verbose set ai? cin? cink? cino? si? inde? indk?
-set ai
-set cin
-set si 
+set noai
+set nocin
+set nosi 
 set inde=
 nnoremap <leader><TAB> :set ai! cin! si! <CR>
 
