@@ -9,7 +9,7 @@
 # \033[0;37m - Grey
 # \033[0;39m - White
 export TERM=xterm-256color
-export PS1='\[\033[1;36m\]\t ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u\[\033[m\]@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+export PS1='\[\e[1;36m\]\t!\! \[\e[01;33m\]\u\[\e[m\]@\h\[\e[0m\]:\[\e[01;34m\]\w\[\e[0m\]\$ '
 PATH=${PATH}:${HOME}/bin
 export EDITOR=/usr/bin/vim
 HISTCONTROL=ignoreboth
@@ -54,4 +54,5 @@ set autologout=0
 
 if [ -n "$SSH_TTY" ] ; then
 echo $SSH_TTY
+[[ -r "$HOME/etc/motd" ]] && cat $HOME/etc/motd
 fi
