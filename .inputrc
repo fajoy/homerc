@@ -19,8 +19,17 @@
 "\e[A": history-search-backward
 #down
 "\e[B": history-search-forward
+
+#putty
 #alt + left
 "\e\e[C":forward-word
 #alt + right
 "\e\e[D":backward-word
+
+#linux
+#alt + left
+"3C":forward-word
+#alt + right
+"3D":backward-word
+
 "\eOP":""
