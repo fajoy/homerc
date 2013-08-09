@@ -90,6 +90,8 @@ map <S-L> gt
 
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <F3> :echo expand('%:p')<CR>
+nnoremap <F4> :marks<CR>
 
 
 "enable keypad by PuTTY
