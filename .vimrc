@@ -46,7 +46,7 @@ hi Underlined   gui=underline guifg=fg guibg=bg
 
 set cursorline
 "hi CursorLine term=underline cterm=underline guibg=#555555
-highlight CursorLine cterm=NONE ctermbg=23
+highlight CursorLine cterm=NONE ctermbg=24
 
 set nobackup
 set nonumber
