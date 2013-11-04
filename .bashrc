@@ -15,6 +15,7 @@ export EDITOR=/usr/bin/vim
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
+test -d ~/.histfile ||mkdir ~/.histfile
 if [ "$?WINDOW" ] ; then
    export HISTFILE=~/.histfile/hist$WINDOW
 else
