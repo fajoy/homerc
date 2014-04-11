@@ -9,8 +9,9 @@
 
 ### 設定檔安裝步驟(若已有存在設定將會自動備份)
 
-```git clone https://github.com/homerc.git
-homerc/install.sh
+```bash
+$ git clone https://github.com/homerc.git
+$ homerc/install.sh
 ```
 
 ### vim主要快捷鍵配置
