@@ -58,7 +58,7 @@ ctrl + a 放開後 按 u 顯示utf8模式
 
 ### 要使putty 或 pietty 顯示UTF8中文時須如下設定
 
-[pietty]
+[![pietty設定][pietty]][pietty]
 
 並且須設定locale，為LANG=en_US.UTF-8
 
