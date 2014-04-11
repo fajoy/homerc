@@ -10,7 +10,7 @@
 ### 設定檔安裝步驟(若已有存在設定將會自動備份)
 
 ```bash
-$ git clone https://github.com/homerc.git
+$ git clone https://github.com/fajoy/homerc.git
 $ homerc/install.sh
 ```
 
