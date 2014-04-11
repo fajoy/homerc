@@ -1,0 +1,35 @@
+#get keycode by command: "showkey -a"
+
+#home
+"\e[1~": beginning-of-line
+#end
+"\e[4~": end-of-line
+#page up
+"\e[5~": beginning-of-history
+#page down
+"\e[6~": end-of-history
+#delete
+"\e[3~": delete-char
+#insert
+"\e[2~": quoted-insert
+
+#ctrl + w
+"^w": backward-delete-word
+#up
+"\e[A": history-search-backward
+#down
+"\e[B": history-search-forward
+
+#putty
+#alt + left
+"\e\e[C":forward-word
+#alt + right
+"\e\e[D":backward-word
+
+#linux
+#alt + left
+"3C":forward-word
+#alt + right
+"3D":backward-word
+
+"\eOP":""
