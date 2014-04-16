@@ -60,7 +60,7 @@ set autologout=0
 [[ -s "$HOME/.inputrc" ]] && export INPUTRC="$HOME/.inputrc"
 [[ -s "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases" # Load bash_profile
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-[[ -s "$HOME/.virtaulenv/bin/activate" ]] && . "$HOME/.virtaulenv/bin/activate" # Load virtualenv
+[[ -s "$HOME/.virtualenv/bin/activate" ]] && . "$HOME/.virtualenv/bin/activate" # Load virtualenv
 [[ -s "$HOME/.nodeenv/bin/activate" ]] && . "$HOME/.nodeenv/bin/activate" # Load nodeenv
 if [ -n "$SSH_TTY" ] ; then
 echo "SSH_TTY=$SSH_TTY"
