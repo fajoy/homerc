@@ -60,8 +60,21 @@ set autologout=0
 [[ -s "$HOME/.inputrc" ]] && export INPUTRC="$HOME/.inputrc"
 [[ -s "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases" # Load bash_profile
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-[[ -s "$HOME/.virtualenv/bin/activate" ]] && . "$HOME/.virtualenv/bin/activate" # Load virtualenv
-[[ -s "$HOME/.nodeenv/bin/activate" ]] && . "$HOME/.nodeenv/bin/activate" # Load nodeenv
+
+# Load virtualenv
+if [[ -s "$HOME/.virtualenv/bin/activate" ]] ; then
+  export VIRTUAL_ENV_DISABLE_PROMPT=1
+  . "$HOME/.virtualenv/bin/activate"
+  unset VIRTUAL_ENV_DISABLE_PROMPT
+fi
+
+# Load nodeenv
+if [[ -s "$HOME/.nodeenv/bin/activate" ]] ; then
+    export NODE_VIRTUAL_ENV_DISABLE_PROMPT=1
+    . "$HOME/.nodeenv/bin/activate"
+    unset NODE_VIRTUAL_ENV_DISABLE_PROMPT
+fi
+
 if [ -n "$SSH_TTY" ] ; then
 echo "SSH_TTY=$SSH_TTY"
 cat /etc/motd
