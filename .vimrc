@@ -44,6 +44,12 @@ hi PreProc      gui=NONE guifg=#ffa0a0 guibg=bg
 hi Type         gui=NONE guifg=NavajoWhite guibg=bg
 hi Underlined   gui=underline guifg=fg guibg=bg
 
+hi Boolean         ctermfg=LightGreen
+hi Character       ctermfg=LightGreen
+hi String          ctermfg=LightGreen
+hi Number          ctermfg=LightGreen
+
+
 set cursorline
 "hi CursorLine term=underline cterm=underline guibg=#555555
 highlight CursorLine cterm=NONE ctermbg=24
@@ -63,6 +69,7 @@ set backspace=indent,eol,start
 set ruler               " show line and column number
 set showcmd 			" show (partial) command in status lineime.sleep(1)
 
+au BufRead,BufNewFile *.js set expandtab
 au BufRead,BufNewFile *.py set expandtab
 au BufRead,BufNewFile *.c set noexpandtab
 au BufRead,BufNewFile *.h set noexpandtab
