@@ -49,25 +49,28 @@ hi Character       ctermfg=LightGreen
 hi String          ctermfg=LightGreen
 hi Number          ctermfg=LightGreen
 
-
 set cursorline
 "hi CursorLine term=underline cterm=underline guibg=#555555
 highlight CursorLine cterm=NONE ctermbg=24
 
+"ref http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+:highlight Tab ctermbg=237 guibg=lightgreen
+:match Tab /\t\+/
+
 set nobackup
 set nonumber
 set background=dark
-syntax on   			" syntax highlighting
+syntax on               " syntax highlighting
 
 set expandtab           " enter spaces when tab is pressed
-set textwidth=0       " break lines when line length increases
+set textwidth=0         " break lines when line length increases
 set tabstop=4           " use 4 spaces to represent tab
 set softtabstop=4
 set shiftwidth=4        " number of spaces to use for auto indent
 set autoindent          " copy indent from current line when starting a new line
 set backspace=indent,eol,start
 set ruler               " show line and column number
-set showcmd 			" show (partial) command in status lineime.sleep(1)
+set showcmd             " show (partial) command in status lineime.sleep(1)
 
 au BufRead,BufNewFile *.js set expandtab
 au BufRead,BufNewFile *.py set expandtab
