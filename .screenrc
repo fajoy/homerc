@@ -41,3 +41,6 @@ bindkey "^[[D" prev
 bindkey "^[x" next
 bindkey "^[z" prev
 
+#for mac iTrem
+bindkey "^[^[[C" next
+bindkey "^[^[[D" prev
