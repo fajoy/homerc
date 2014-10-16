@@ -133,10 +133,14 @@ map <PageDown> <C-d>
 imap <PageUp> <C-o><C-u>
 imap <PageDown> <C-o><C-d>
 
-
-
-
-
+"alt + up : page up
+map [A <C-u>
+"alt + down : page down
+map [B <C-d>
+"alt + right : next word
+map [C w
+"alt + left : back word
+map [D b
 
 function! WinResize()
     let a:cmd=input(':','vertical resize +1')
