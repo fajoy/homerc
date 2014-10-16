@@ -38,10 +38,19 @@ if [[  `uname` =~ "Linux" ]] ; then
    alias grep='grep --color=auto'
 fi
 
+if [[  `uname` =~ "Darwin" ]] ; then
+    #ref http://blog.longwin.com.tw/2006/07/color_ls_in_bash_2006/
+    export CLICOLOR="YES"
+    export LSCOLORS=ExHxcxdxCxegedhbhghcad
+    alias ll='ls -l'
+    alias la='ls -A'
+    alias l='ls -CF'
+fi
 
 if [[  `uname` =~ "FreeBSD" ]] ; then
     export EDITOR=/usr/local/bin/vim
     export CLICOLOR="YES"
+    export LSCOLORS=ExHxcxdxCxegedhbhghcad
     alias ll='ls -l'
     alias la='ls -A'
     alias l='ls -CF'
@@ -79,3 +88,8 @@ if [ -n "$SSH_TTY" ] ; then
 echo "SSH_TTY=$SSH_TTY"
 cat /etc/motd
 fi
+
+if [ -e /usr/local/etc/profile.d/z.sh ] ; then
+    . /usr/local/etc/profile.d/z.sh
+fi
+
