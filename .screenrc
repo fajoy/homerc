@@ -31,16 +31,3 @@ bind "<" readbuf $HOME/.screen_exchange
 
 bindkey "^[[1;5C" next
 bindkey "^[[1;5D" prev
-
-#for mac
-bindkey "^[[5C" next
-bindkey "^[[5D" prev
-
-bindkey "^[[C" next
-bindkey "^[[D" prev
-bindkey "^[x" next
-bindkey "^[z" prev
-
-#for mac iTrem
-bindkey "^[^[[C" next
-bindkey "^[^[[D" prev
