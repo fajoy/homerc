@@ -20,7 +20,7 @@
 #down
 "\e[B": history-search-forward
 
-#putty
+#putty and mac
 #alt + left
 "\e\e[C":forward-word
 #alt + right
@@ -31,11 +31,5 @@
 "3C":forward-word
 #alt + right
 "3D":backward-word
-
-#mac
-#alt + left
-"\e\e[C":forward-word
-#alt + right
-"\e\e[D":backward-word
 
 "\eOP":""
