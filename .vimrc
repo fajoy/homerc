@@ -93,10 +93,13 @@ map <C-t><C-t> :tabnew<CR>
 " close tab
 map <C-t><C-w> :tabclose<CR>
 
-
 " change tab
 map <S-H> gT
 map <S-L> gt
+
+" move tab
+map <C-t><C-n> :tabn<CR>
+map <C-t><C-p> :tabp<CR>
 
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
