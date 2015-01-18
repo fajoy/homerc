@@ -89,7 +89,7 @@ set inde=
 nnoremap <leader><TAB> :set ai! cin! si! <CR>
 
 " new tab
-map <C-t><C-t> :tabnew<CR>
+map <C-t><C-t> :tabnew<CR>:match Tab /\t\+/<CR>
 " close tab
 map <C-t><C-w> :tabclose<CR>
 
@@ -105,6 +105,7 @@ map <C-t><C-p> :tabp<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F3> :echo expand('%:p')<CR>
 nnoremap <F4> :marks<CR>
+nnoremap <F5> :set expandtab!<CR>
 
 " map Mac OS X Terminal.app default Home and End
 map <ESC>[H <Home>
