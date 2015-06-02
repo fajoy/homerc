@@ -3,36 +3,40 @@ vbell_msg "Ding Ding!!"
 bell off
 bell_msg "Bell in window %n^G"
 startup_message off
+exec sh -c 'screen -X setenv OS "`uname -sr`"'
 caption always "%{wK} %=|%{Wb}%-w%{Yr}%n*%t%{Wb}%+w%{wK}|%= "
-hardstatus alwayslastline "%= %= %{Y}(%H) %{R}%e %{R} %l %{wb} %Y/%m/%d %c"
-#termcapinfo xterm "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
-#termcapinfo xterm-color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
-#defutf8 on
-#defencoding utf8
-#setenv "SEN" "utf8"
-#setenv "DEN" "big5"
+hardstatus alwayslastline "%= %= %{Y}(%H) $OS %{R}%e %{R} %l %{wb} %Y/%m/%d %c"
+
 escape "^AA"
 
-
-bind u encoding utf8 utf8
+#Convert encode big5->utf8 (For BBS)
 bind b encoding big5 utf8
+
+#For Restore encode
+bind u encoding utf8 utf8
+
 bind "X" remove
 bind "Q" only
 bind "|" split -v
 bind "-" split
 bind "c" screen
 bind "l" redisplay
-bind "." eval "echo \"source $HOME/.screenrc\"" "source $HOME/.screenrc" 
+bind "." eval "source $HOME/.screenrc" "echo \"source $HOME/.screenrc\""
 bind "h" help
 bind ">" writebuf $HOME/.screen_exchange
 bind "<" readbuf $HOME/.screen_exchange
 
 #check key use "showkey -a"
 
-#for mac
-#bindkey "^[[1;5C" next
-#bindkey "^[[1;5D" prev
+#For Mac OS
+bindkey "^[[1;5C" next
+bindkey "^[[1;5D" prev
 
-#for window
+#For Window
 bindkey "^[[C" next
 bindkey "^[[D" prev
+
+#Enable Window HotKey
+bind W eval "bindkey \"^[[C\" next" "bindkey \"^[[D\" prev" "echo \"Enable Window Key\""
+#Disable Window HotKey (When use Mac OS need)
+bind M eval "bindkey \"^[[C\" " "bindkey \"^[[D\" " "echo \"Disable Window Key\""
