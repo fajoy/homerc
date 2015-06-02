@@ -78,12 +78,12 @@ set autologout=0
 
 #Format json
 alias json="python -m json.tool"
+alias vundle_inst="test -e $HOME/.vim/bundle/Vundle.vim&&echo vundle already install.||git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
 
 [[ -s "$HOME/.inputrc" ]] && export INPUTRC="$HOME/.inputrc"
 
 #Load bash_profile
 [[ -s "$HOME/.bash_aliases" ]] && . "$HOME/.bash_aliases"
-
 
 #Load rvm
 alias rvm_inst="gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3;req https://get.rvm.io | bash -s stable;. $HOME/.bashrc"
