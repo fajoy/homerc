@@ -78,7 +78,7 @@ set autologout=0
 
 #Format json
 alias json="python -m json.tool"
-alias vundle_inst="test -e $HOME/.vim/bundle/Vundle.vim&&echo vundle already install.||git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
+alias vundle_inst="test -e $HOME/.vim/bundle/Vundle.vim&&echo vundle already install.||git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim;vim +PluginInstall +qall"
 
 [[ -s "$HOME/.inputrc" ]] && export INPUTRC="$HOME/.inputrc"
 
