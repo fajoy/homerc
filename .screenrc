@@ -4,8 +4,9 @@ bell off
 bell_msg "Bell in window %n^G"
 startup_message off
 exec sh -c 'screen -X setenv OS "`uname -sr`"'
+exec sh -c 'screen -X setenv PUBLIC_ADDRESS "`dig +short myip.opendns.com @resolver1.opendns.com`"'
 caption always "%{wK} %=|%{Wb}%-w%{Yr}%n*%t%{Wb}%+w%{wK}|%= "
-hardstatus alwayslastline "%= %= %{Y}(%H) $OS %{R}%e %{R} %l %{wb} %Y/%m/%d %c"
+hardstatus alwayslastline "%= %= %{Y}(%H) $OS $PUBLIC_ADDRESS %{R}%e %{R} %l %{wb} %Y/%m/%d %c"
 
 escape "^AA"
 
@@ -38,5 +39,6 @@ bindkey "^[[D" prev
 
 #Enable Window HotKey
 bind W eval "bindkey \"^[[C\" next" "bindkey \"^[[D\" prev" "echo \"Enable Window Key\""
+
 #Disable Window HotKey (When use Mac OS need)
 bind M eval "bindkey \"^[[C\" " "bindkey \"^[[D\" " "echo \"Disable Window Key\""
