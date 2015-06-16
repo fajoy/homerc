@@ -8,6 +8,9 @@
 # \033[0;36m - Light Blue
 # \033[0;37m - Grey
 # \033[0;39m - White
+if [ -z "$PS1" ]; then #for scp use.
+    return;
+fi
 
 export TERM=xterm-256color
 export PS1='\[\e[1;36m\]\t!\! \[\e[01;33m\]\u\[\e[m\]@\h\[\e[0m\]:\[\e[01;34m\]\w\[\e[0m\]\$ '
@@ -56,6 +59,9 @@ if [[  `uname` =~ "FreeBSD" ]] ; then
     alias l='ls -CF'
 fi
 
+if [[ -z "$PUBLIC_ADDRESS" ]] ;then
+    export PUBLIC_ADDRESS="`dig +short myip.opendns.com @resolver1.opendns.com`"
+fi
 
 if [[ -x `which curl` ]] ; then
     REQ='curl -o-'

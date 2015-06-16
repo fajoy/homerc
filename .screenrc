@@ -4,7 +4,6 @@ bell off
 bell_msg "Bell in window %n^G"
 startup_message off
 exec sh -c 'screen -X setenv OS "`uname -sr`"'
-exec sh -c 'screen -X setenv PUBLIC_ADDRESS "`dig +short myip.opendns.com @resolver1.opendns.com`"'
 caption always "%{wK} %=|%{Wb}%-w%{Yr}%n*%t%{Wb}%+w%{wK}|%= "
 hardstatus alwayslastline "%= %= %{Y}(%H) $OS $PUBLIC_ADDRESS %{R}%e %{R} %l %{wb} %Y/%m/%d %c"
 
